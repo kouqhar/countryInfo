@@ -1,0 +1,209 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
+$body : rgb(9, 37, 50);
+$sub-black : rgba(0, 0, 0, 0.932);
+$white : rgb(245, 245, 245);
+$grey : rgba(231, 231, 231, 0.986);
+$orange : #32e0c4;
+$heading : #204051;
+
+@mixin paddingMargin($padding : 0, $margin : 0) {
+    padding: $padding;
+    margin: $margin;
+}
+
+@mixin heightWidth($height : 100%, $width : 100%) {
+    height: $height;
+    width: $width;
+}
+
+@mixin displayGrid($gr : 1fr, $gc : 1fr) {
+    display: grid;
+    grid-template-rows: $gr;
+    grid-template-columns: $gc;
+}
+
+@mixin displayFlex($jc : center, $al : center, $fd : row) {
+    display: flex;
+    justify-content: $jc;
+    align-items: $al;
+    flex-direction: $fd;
+}
+
+*{
+    @include paddingMargin();
+}
+
+body{
+    @include heightWidth(100vh);
+    background: $body;
+    color: $white;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    font-family: "Roboto", "Open Sans", sans-serif;
+}
+
+.page-wrapper{
+    @include displayGrid(5rem 1fr, 1fr);
+    @include paddingMargin();
+    background: #000;
+
+    header{
+        background: $heading;
+        h1{
+            @include heightWidth(100%, 90%);
+            @include paddingMargin(1rem 0, 0 auto);
+        }
+    }
+
+    .sub-wrapper{
+        // @include displayGrid(1fr, 1fr 2fr);
+        @include displayFlex(space-between, flex-start);
+        @include heightWidth(100vh, 90%);
+        @include paddingMargin(1rem 0, 0 auto);
+
+        .flag{
+            @include heightWidth(200px, 40%);
+            margin: 0 auto;
+            position: relative;
+            #flag{
+                @include heightWidth();
+                border: none;
+            }
+            .country-subDetails{
+                @include heightWidth();
+                @include displayFlex(space-between, space-between, column);
+                div{ 
+                    @include heightWidth(auto, 95%);   
+                    @include paddingMargin(.5rem .7rem, 2rem auto);
+                    border-radius: .5rem;
+                    background: #fff;
+                    color: hsl(210, 22%, 49%);
+                    p{
+                        @include displayFlex(space-between);
+                        @include paddingMargin(.5rem .7rem, .5rem auto);
+                        font-size: 1.2rem;
+                        font-weight: 700;
+                        span{
+                            color : $heading;
+                        }
+                    }
+                }
+            }
+        }
+
+        .country-details{
+            @include heightWidth(90%, 90%);
+            @include paddingMargin(.5rem, 0 auto);
+            @include displayFlex(space-evenly, space-between);
+            flex-wrap: wrap;
+            scroll-behavior: smooth;
+            overflow-y: scroll;
+
+            div{
+                @include paddingMargin(3rem 1.5rem, .2rem 0 1rem);
+                @include heightWidth(fit-content, 200px);
+                justify-items: center;
+                align-items: center;
+                border-radius: .5rem;
+                background: #fff;
+                transition : all .5s ease-in-out;
+                font-weight: 600;
+                cursor: pointer;
+                p{
+                    color: #102A42;
+                    margin-bottom: 1rem;
+                }
+                span{
+                    // display: inline-block;
+                    text-indent: 1rem;
+                    color: hsl(210, 22%, 49%);
+                    line-height: 1.5rem;
+                    &::before{
+                        content: ' - ';
+                    }
+                }
+                &:hover{
+                    transform: scale(1.1);
+                    box-shadow: -2px 0px 2px 1px white;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width : 62em){
+    .page-wrapper{
+        .sub-wrapper{
+            @include displayFlex(space-between, flex-start, column);
+            .flag{
+                @include heightWidth(fit-content, 100%);
+                @include displayFlex();
+                @include paddingMargin(0, 0 auto 1rem);
+                #flag{
+                    @include heightWidth(100%, 40%);
+                }
+                .country-subDetails{
+                    @include displayFlex(space-between);
+
+                div{ 
+                    @include heightWidth(auto);   
+                    @include paddingMargin(.5rem .7rem, auto 2rem);
+                    p{
+                        @include paddingMargin(.3rem .5rem, .5rem auto);
+                        font-size: 1rem;
+                    }
+                }
+                }
+            }
+
+            .country-details{
+                @include heightWidth();
+                @include paddingMargin(1.5rem .5rem, .5rem auto);
+    
+                div{
+                    @include paddingMargin(1.5rem, .2rem 0 1rem);
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width : 43em){
+    body{
+        overflow-y: scroll;
+    }
+    .page-wrapper{
+        @include displayGrid(1fr, 1fr);
+        height: 100vh;
+        background: transparent;
+        .sub-wrapper{
+            @include displayFlex(flex-start, flex-start, column);
+            width: 90%;
+            .flag{
+                @include heightWidth(auto, auto);
+                @include displayFlex(space-around, space-around, column);
+                @include paddingMargin(0, 0 auto 1rem);
+                #flag{
+                    @include heightWidth();
+                }
+                .country-subDetails{
+                    @include displayFlex(flex-start, flex-start, column);
+                    div{
+                        @include heightWidth();
+                        @include paddingMargin();
+                    }
+                }
+            }
+
+            .country-details{
+                @include heightWidth(100%, 90%);
+                @include paddingMargin(.5rem, 1rem auto);
+                transform: translateY(5rem);
+    
+                div{
+                    @include paddingMargin(1.5rem, .2rem 0 1rem);
+                }
+            }
+        }
+    }
+}

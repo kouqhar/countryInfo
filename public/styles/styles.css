@@ -1,0 +1,356 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  background: #092532;
+  color: whitesmoke;
+  scroll-behavior: smooth;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Roboto", "Open Sans", sans-serif;
+}
+
+.page-wrapper {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 5rem 1fr;
+      grid-template-rows: 5rem 1fr;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  padding: 0;
+  margin: 0;
+  background: #000;
+}
+
+.page-wrapper header {
+  background: #204051;
+}
+
+.page-wrapper header h1 {
+  height: 100%;
+  width: 90%;
+  padding: 1rem 0;
+  margin: 0 auto;
+}
+
+.page-wrapper .sub-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  height: 100vh;
+  width: 90%;
+  padding: 1rem 0;
+  margin: 0 auto;
+}
+
+.page-wrapper .sub-wrapper .flag {
+  height: 200px;
+  width: 40%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.page-wrapper .sub-wrapper .flag #flag {
+  height: 100%;
+  width: 100%;
+  border: none;
+}
+
+.page-wrapper .sub-wrapper .flag .country-subDetails {
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: space-between;
+      -ms-flex-align: space-between;
+          align-items: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.page-wrapper .sub-wrapper .flag .country-subDetails div {
+  height: auto;
+  width: 95%;
+  padding: 0.5rem 0.7rem;
+  margin: 2rem auto;
+  border-radius: .5rem;
+  background: #fff;
+  color: #617d98;
+}
+
+.page-wrapper .sub-wrapper .flag .country-subDetails div p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  padding: 0.5rem 0.7rem;
+  margin: 0.5rem auto;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.page-wrapper .sub-wrapper .flag .country-subDetails div p span {
+  color: #204051;
+}
+
+.page-wrapper .sub-wrapper .country-details {
+  height: 90%;
+  width: 90%;
+  padding: 0.5rem;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: space-between;
+      -ms-flex-align: space-between;
+          align-items: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+}
+
+.page-wrapper .sub-wrapper .country-details div {
+  padding: 3rem 1.5rem;
+  margin: 0.2rem 0 1rem;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 200px;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: .5rem;
+  background: #fff;
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.page-wrapper .sub-wrapper .country-details div p {
+  color: #102A42;
+  margin-bottom: 1rem;
+}
+
+.page-wrapper .sub-wrapper .country-details div span {
+  text-indent: 1rem;
+  color: #617d98;
+  line-height: 1.5rem;
+}
+
+.page-wrapper .sub-wrapper .country-details div span::before {
+  content: ' - ';
+}
+
+.page-wrapper .sub-wrapper .country-details div:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-box-shadow: -2px 0px 2px 1px white;
+          box-shadow: -2px 0px 2px 1px white;
+}
+
+@media only screen and (max-width: 62em) {
+  .page-wrapper .sub-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .page-wrapper .sub-wrapper .flag {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    padding: 0;
+    margin: 0 auto 1rem;
+  }
+  .page-wrapper .sub-wrapper .flag #flag {
+    height: 100%;
+    width: 40%;
+  }
+  .page-wrapper .sub-wrapper .flag .country-subDetails {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .page-wrapper .sub-wrapper .flag .country-subDetails div {
+    height: auto;
+    width: 100%;
+    padding: 0.5rem 0.7rem;
+    margin: auto 2rem;
+  }
+  .page-wrapper .sub-wrapper .flag .country-subDetails div p {
+    padding: 0.3rem 0.5rem;
+    margin: 0.5rem auto;
+    font-size: 1rem;
+  }
+  .page-wrapper .sub-wrapper .country-details {
+    height: 100%;
+    width: 100%;
+    padding: 1.5rem 0.5rem;
+    margin: 0.5rem auto;
+  }
+  .page-wrapper .sub-wrapper .country-details div {
+    padding: 1.5rem;
+    margin: 0.2rem 0 1rem;
+  }
+}
+
+@media only screen and (max-width: 43em) {
+  body {
+    overflow-y: scroll;
+  }
+  .page-wrapper {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-rows: 1fr;
+        grid-template-rows: 1fr;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    height: 100vh;
+    background: transparent;
+  }
+  .page-wrapper .sub-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 90%;
+  }
+  .page-wrapper .sub-wrapper .flag {
+    height: auto;
+    width: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: space-around;
+        -ms-flex-align: space-around;
+            align-items: space-around;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 0;
+    margin: 0 auto 1rem;
+  }
+  .page-wrapper .sub-wrapper .flag #flag {
+    height: 100%;
+    width: 100%;
+  }
+  .page-wrapper .sub-wrapper .flag .country-subDetails {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .page-wrapper .sub-wrapper .flag .country-subDetails div {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+  .page-wrapper .sub-wrapper .country-details {
+    height: 100%;
+    width: 90%;
+    padding: 0.5rem;
+    margin: 1rem auto;
+    -webkit-transform: translateY(5rem);
+            transform: translateY(5rem);
+  }
+  .page-wrapper .sub-wrapper .country-details div {
+    padding: 1.5rem;
+    margin: 0.2rem 0 1rem;
+  }
+}
+/*# sourceMappingURL=styles.css.map */
